@@ -1,6 +1,11 @@
 const express = require('express');
-const App = require('../dist/js/app')
+const App = require('../dist/js/app');
+const ReactRouter = require('react-router');
 const app = express();
+
+<ReactRouter.StaticRouter>
+    <App />
+</ReactRouter.StaticRouter>
 
 app.get('*',(request, res) => {
     console.log(request.url)
