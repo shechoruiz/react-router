@@ -1,7 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import Home from "../pages/containers/home";
+import { BrowserRouter, Route } from "react-router-dom";
+import Videos from "../pages/containers/videos";
+import Home from "../pages/components/home";
 import Header from "../pages/components/header";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -43,7 +44,8 @@ render(
     <Provider store={store}>
       <React.Fragment>
         <Header />
-        <Home />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/videos" component={Videos} />
       </React.Fragment>
     </Provider>
   </BrowserRouter>,
